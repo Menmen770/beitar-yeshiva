@@ -1,10 +1,6 @@
 [build]
-  command = "npm_config_build_from_source=true npm ci --include=optional && npm rebuild lightningcss --build-from-source && npm rebuild @tailwindcss/oxide --build-from-source && npm run build"
+  command = "npm run build"
   publish = "dist"
-
-[build.environment]
-  NODE_VERSION = "20"
-  NPM_FLAGS = "--legacy-peer-deps"
 
 [[redirects]]
   from = "/*"
