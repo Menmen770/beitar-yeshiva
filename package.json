@@ -10,6 +10,9 @@
     "preview": "vite preview",
     "postinstall": "node scripts/fetch-rollup-native.cjs"
   },
+  "engines": {
+    "node": ">=20.19.0"
+  },
   "dependencies": {
     "gsap": "^3.14.2",
     "react": "^19.2.0",
