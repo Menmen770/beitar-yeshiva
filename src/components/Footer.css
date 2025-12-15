@@ -1,0 +1,131 @@
+/* src/components/Footer.css */
+
+.footer {
+  background: linear-gradient(
+    135deg,
+    var(--color-secondary-blue-dark) 0%,
+    var(--color-secondary-blue) 100%
+  );
+  color: var(--color-neutral-white);
+  width: 100%;
+  padding: 10px 0; /* פחות גובה כולל לפוטר */
+  font-family: Arial, sans-serif;
+  direction: rtl;
+  margin-top: auto;
+  border-top: 3px solid var(--color-primary-gold);
+  box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Upper bar mirrors navbar layout */
+.footer-inner {
+  width: 100%;
+  padding-right: 60px;
+  padding-left: 0;
+  display: flex;
+  align-items: center; /* יישור אנכי אמצעי כמו בנאבבר */
+  justify-content: space-between;
+  gap: 24px;
+  padding-top: 4px;
+  padding-bottom: 18px; /* מפנה מקום לשורת הזכויות בתחתית תוך צמצום הגובה */
+  position: relative;
+}
+
+.footer-logo-area {
+  display: flex;
+  align-items: flex-start; /* יישור עליון כדי שהלוגו והצור קשר יישארו מסודרים */
+  gap: 16px;
+}
+
+.footer-mini-contact {
+  display: flex;
+  flex-direction: column; /* עמודה אנכית */
+  align-items: flex-start;
+  gap: 6px; /* ריווח קטן בין שורות */
+  color: var(--color-primary-gold-light);
+  font-size: 0.85rem;
+}
+.footer-mini-contact .mini-item {
+  color: var(--color-primary-gold-light);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+.footer-mini-contact .mini-item:hover {
+  color: var(--color-primary-gold);
+}
+
+.footer-links {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  flex: 1;
+  justify-content: center;
+  flex-wrap: wrap; /* מאפשר שתי שורות אם צריך */
+}
+
+/* Copyright בצד שמאל */
+.footer-copyright {
+  position: absolute;
+  left: 16px;
+  bottom: 8px;
+  font-size: 0.68rem;
+  color: var(--color-neutral-gray-light);
+  white-space: nowrap;
+  opacity: 0.9;
+}
+
+/* Make generic nav-link/donate-button readable on dark bg */
+.footer .nav-link {
+  color: var(--color-neutral-white);
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  height: 46px;
+  line-height: 1;
+  padding: 0 12px;
+  border-radius: 10px;
+  white-space: nowrap;
+}
+.footer .nav-link:hover {
+  color: var(--color-primary-gold);
+  background-color: rgba(201, 169, 97, 0.18);
+  transform: translateY(-1px);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .footer-inner {
+    padding-right: 24px;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  .footer-links {
+    gap: 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .footer-inner {
+    padding: 10px 16px 4px;
+  }
+  .footer-logo-area {
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+  .footer-mini-contact {
+    align-items: center; /* במובייל מרכז את הפריטים */
+  }
+  .footer-links {
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .footer-copyright {
+    left: 12px;
+    bottom: 6px;
+    font-size: 0.64rem;
+  }
+}

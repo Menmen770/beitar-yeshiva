@@ -1,0 +1,59 @@
+/* src/components/AccessibilityButton.css */
+
+.accessibility-button {
+  position: fixed;
+  bottom: 32px; /* מעלה מעט את הכפתור שלא ירד נמוך מדי */
+  left: 20px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: linear-gradient(
+    135deg,
+    var(--color-primary-gold) 0%,
+    var(--color-primary-gold-dark) 100%
+  );
+  color: white;
+  border: 3px solid var(--color-secondary-blue);
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(201, 169, 97, 0.4);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.accessibility-button:hover {
+  transform: scale(1.1);
+  background: linear-gradient(
+    135deg,
+    var(--color-secondary-blue) 0%,
+    var(--color-secondary-blue-dark) 100%
+  );
+  border-color: var(--color-primary-gold);
+  box-shadow: 0 6px 20px rgba(30, 93, 145, 0.5);
+}
+
+.accessibility-button:focus {
+  outline: 3px solid var(--color-primary-gold);
+  outline-offset: 2px;
+}
+
+.accessibility-button svg {
+  width: 28px;
+  height: 28px;
+}
+
+@media (max-width: 768px) {
+  .accessibility-button {
+    width: 50px;
+    height: 50px;
+    bottom: 24px;
+    left: 15px;
+  }
+
+  .accessibility-button svg {
+    width: 24px;
+    height: 24px;
+  }
+}

@@ -1,0 +1,357 @@
+/* src/components/RabbisTeam.css - סליידר אוטומטי אינסופי */
+
+.rabbis-team-section {
+  width: 100%;
+  padding: 80px 0 90px;
+  background: linear-gradient(135deg, #f8f9fb 0%, #ffffff 50%, #f8f9fb 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.rabbis-container {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 4%;
+}
+
+/* כותרת */
+.rabbis-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.rabbis-title {
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: #0d3b66;
+  margin: 0 0 12px;
+  position: relative;
+  display: inline-block;
+}
+
+.rabbis-title::after {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 5px;
+  background: linear-gradient(90deg, #0d3b66, #1e5d91);
+  border-radius: 3px;
+}
+
+.rabbis-subtitle {
+  font-size: 1.15rem;
+  color: #666;
+  margin: 0;
+  font-weight: 400;
+}
+
+/* סליידר אוטומטי - כמו בדוגמה */
+.rabbis-slider {
+  width: 100%;
+  height: var(--card-height);
+  overflow: hidden;
+  position: relative;
+  /* Fade effect בצדדים */
+  mask-image: linear-gradient(to right, transparent, #000 6% 94%, transparent);
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent,
+    #000 6% 94%,
+    transparent
+  );
+}
+
+/* כאשר יש כרטיס מורחב - ביטול mask */
+.rabbis-slider:has(.rabbi-item.expanded) {
+  mask-image: none;
+  -webkit-mask-image: none;
+  overflow: visible;
+}
+
+.rabbis-list {
+  display: flex;
+  width: 100%;
+  min-width: calc(var(--card-width) * var(--quantity));
+  position: relative;
+  height: 100%;
+}
+
+.rabbi-item {
+  width: var(--card-width);
+  height: var(--card-height);
+  position: absolute;
+  /* מיקום התחלתי - מחוץ למסך מימין */
+  left: max(
+    100%,
+    calc(100% + (var(--card-width) + 30px) * (var(--position) - 1))
+  );
+  /* אנימציה איטית - 25 שניות */
+  animation: autoSlideRabbis 25s linear infinite;
+  transition: all 0.5s ease;
+  /* עיכוב שלילי כדי שיתחיל כבר במהלך האנימציה */
+  animation-delay: calc(-25s * (var(--position) - 1) / var(--quantity));
+  cursor: pointer;
+}
+
+/* כרטיס מורחב */
+.rabbi-item.expanded {
+  height: auto;
+  z-index: 100;
+  animation-play-state: paused;
+  filter: none !important;
+}
+
+@keyframes autoSlideRabbis {
+  from {
+    left: 100%;
+  }
+  to {
+    left: calc(var(--card-width) * -1);
+  }
+}
+
+/* Hover - עצירה ו-grayscale */
+.rabbis-slider:has(.rabbi-item.expanded) .rabbi-item {
+  animation-play-state: paused;
+}
+
+.rabbi-item.expanded {
+  filter: grayscale(0) !important;
+}
+
+/* כרטיס רב */
+.rabbi-card {
+  width: 100%;
+  height: 100%;
+  background: #ffffff;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e8ecf1;
+  transition: all 0.35s ease;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+/* כרטיס מורחב - מאפשר תוכן מלא */
+.rabbi-item.expanded .rabbi-card {
+  height: 100%;
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.12);
+  border-color: rgba(201, 169, 97, 0.45);
+}
+
+.rabbi-image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 140px; /* גובה קבוע לכל התמונות */
+  flex-shrink: 0; /* מונע התכווצות */
+  overflow: hidden;
+  background: linear-gradient(135deg, #e8ecf1 0%, #d4dae2 100%);
+}
+
+.rabbi-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.rabbi-item:hover .rabbi-image {
+  transform: scale(1.05);
+}
+
+.rabbi-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(13, 59, 102, 0.7) 0%,
+    transparent 60%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.rabbi-item:hover .rabbi-overlay {
+  opacity: 1;
+}
+
+.rabbi-info {
+  padding: 12px 10px 14px;
+  text-align: center;
+  background: #ffffff;
+  height: 100px; /* גובה קבוע לאזור הטקסט */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  transition: all 0.5s ease;
+}
+
+/* כרטיס מורחב - פרטי מידע נוספים */
+.rabbi-item.expanded .rabbi-info {
+  text-align: right;
+}
+
+.rabbi-name {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #0d3b66;
+  margin: 0 0 4px;
+  line-height: 1.2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.rabbi-title {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #1e5d91;
+  margin: 0 0 6px;
+  line-height: 1.2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.rabbi-description {
+  font-size: 0.7rem;
+  color: #666;
+  margin: 0;
+  line-height: 1.3;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+}
+
+/* כרטיס מורחב - הצגת טקסט מלא */
+.rabbi-item.expanded .rabbi-name {
+  font-size: 0.9rem;
+  white-space: normal;
+  overflow: visible;
+  text-overflow: unset;
+  color: var(--color-secondary-blue);
+  font-weight: 800;
+  margin-bottom: 2px;
+}
+
+.rabbi-item.expanded .rabbi-title {
+  font-size: 0.78rem;
+  white-space: normal;
+  overflow: visible;
+  text-overflow: unset;
+  color: var(--color-primary-gold);
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.rabbi-item.expanded .rabbi-description {
+  font-size: 0.72rem;
+  overflow: visible;
+  display: block;
+  white-space: normal;
+  color: #555;
+  line-height: 1.35;
+  line-clamp: unset;
+  -webkit-line-clamp: unset;
+  -webkit-box-orient: unset;
+}
+
+/* Overlay טקסט שמתגלה מלמטה בתוך הכרטיס (בלי להזיז/להגדיל את הכרטיס) */
+.rabbi-bio-overlay {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 12px 12px 14px;
+  background: rgba(255, 255, 255, 0.92);
+  border-top: 1px solid rgba(201, 169, 97, 0.45);
+  transform: translateY(100%);
+  opacity: 0;
+  transition: transform 240ms ease, opacity 240ms ease;
+  pointer-events: none;
+}
+
+.rabbi-item.expanded .rabbi-bio-overlay {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.rabbi-bio-text {
+  margin: 0;
+  font-size: 0.78rem;
+  line-height: 1.55;
+  color: #2d2d2d;
+  text-align: right;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 5;
+  line-clamp: 5;
+  overflow: hidden;
+}
+
+/* רספונסיביות */
+@media (max-width: 1024px) {
+  .rabbis-slider {
+    --card-width: 300px;
+    --card-height: 420px;
+  }
+
+  .rabbis-title {
+    font-size: 2.4rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .rabbis-team-section {
+    padding: 60px 0 70px;
+  }
+
+  .rabbis-slider {
+    --card-width: 280px;
+    --card-height: 400px;
+  }
+
+  .rabbis-title {
+    font-size: 2rem;
+  }
+
+  .rabbis-subtitle {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .rabbis-team-section {
+    padding: 50px 0 60px;
+  }
+
+  .rabbis-slider {
+    --card-width: 260px;
+    --card-height: 380px;
+  }
+
+  .rabbis-title {
+    font-size: 1.8rem;
+  }
+
+  .rabbi-info {
+    padding: 16px 14px 20px;
+  }
+
+  .rabbi-name {
+    font-size: 1.15rem;
+  }
+
+  .rabbi-title {
+    font-size: 0.95rem;
+  }
+
+  .rabbi-description {
+    font-size: 0.85rem;
+  }
+}

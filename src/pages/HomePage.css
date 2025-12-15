@@ -1,0 +1,87 @@
+/* src/pages/HomePage.css */
+
+.home-page-container {
+  min-height: 100vh;
+  width: 100%;
+  color: var(--color-neutral-black);
+  background: linear-gradient(
+    180deg,
+    var(--color-neutral-white) 0%,
+    #f8f9fa 100%
+  );
+  /* אנחנו נרצה לשלוט ב-direction: rtl; ברמת הטקסט, לא ברמת הקונטיינר */
+}
+
+.hero-section {
+  /* נגדיר גובה כדי שהמרכוז יהיה משמעותי */
+  height: 70vh;
+  width: 100%;
+
+  /* 🔥🔥🔥 הגדרות מרכוז תוכן HERO 🔥🔥🔥 */
+  display: flex;
+  /* מרכוז אופקי: */
+  justify-content: center;
+  /* מרכוז אנכי: */
+  align-items: center;
+
+  text-align: center; /* ודא שהטקסט בפנים ממורכז */
+  padding: 20px;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(201, 169, 97, 0.1) 0%,
+    transparent 70%
+  );
+}
+
+.hero-content {
+  max-width: 800px;
+  direction: rtl; /* יישור מימין לשמאל */
+}
+
+.hero-content h1 {
+  font-size: 3.5rem;
+  margin-bottom: 20px;
+  font-weight: 800;
+  color: var(--color-secondary-blue);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.hero-content p {
+  font-size: 1.3rem;
+  margin-bottom: 30px;
+  line-height: 1.5;
+  color: var(--color-neutral-gray-dark);
+}
+
+/* עיצוב הכפתור הראשי */
+.cta-button {
+  background: linear-gradient(
+    135deg,
+    var(--color-secondary-blue) 0%,
+    var(--color-secondary-blue-dark) 100%
+  );
+  color: white;
+  padding: 15px 30px;
+  border: 2px solid var(--color-primary-gold);
+  border-radius: 5px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(30, 93, 145, 0.3);
+}
+
+.cta-button:hover {
+  background: linear-gradient(
+    135deg,
+    var(--color-primary-gold) 0%,
+    var(--color-primary-gold-dark) 100%
+  );
+  border-color: var(--color-secondary-blue);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(201, 169, 97, 0.4);
+}
+
+/* מאפשר למכלול ClickSpark לשמור על גודל הכפתור ולא למתוח לרוחב מלא */
+.inline-click {
+  display: inline-block;
+}

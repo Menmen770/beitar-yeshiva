@@ -1,0 +1,285 @@
+/* src/pages/ContactPage.css - עיצוב מקצועי לדף צור קשר */
+
+.contact-page {
+  width: 100%;
+  min-height: 100vh;
+  background: linear-gradient(to bottom, #f9fafb 0%, #ffffff 100%);
+  padding-bottom: 60px;
+}
+
+.contact-hero {
+  background: linear-gradient(135deg, #0d3b66 0%, #14507f 60%, #1e5d91 100%);
+  color: #fff;
+  padding: 70px 8% 60px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-hero::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+    circle at 30% 40%,
+    rgba(255, 255, 255, 0.12),
+    transparent 60%
+  );
+  pointer-events: none;
+}
+
+.contact-title {
+  font-size: 2.8rem;
+  margin: 0 0 16px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  position: relative;
+  z-index: 1;
+}
+
+.contact-subtitle {
+  font-size: 1.15rem;
+  line-height: 1.6;
+  margin: 0 auto;
+  max-width: 700px;
+  font-weight: 300;
+  position: relative;
+  z-index: 1;
+}
+
+.contact-content {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 40px;
+  max-width: 1200px;
+  margin: -40px auto 0;
+  padding: 0 8%;
+  position: relative;
+  z-index: 2;
+}
+
+/* פרטי התקשרות */
+.contact-info {
+  background: linear-gradient(135deg, #ffffff 0%, #f7f9fb 100%);
+  padding: 36px 32px;
+  border-radius: 20px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e5e9ef;
+  height: fit-content;
+}
+
+.contact-info h2 {
+  margin: 0 0 24px;
+  font-size: 1.6rem;
+  color: #0d3b66;
+  font-weight: 700;
+}
+
+.info-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 24px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #e8ecf1;
+}
+
+.info-item:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.info-item .icon {
+  font-size: 1.8rem;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.info-item strong {
+  display: block;
+  color: #0d3b66;
+  font-size: 1rem;
+  margin-bottom: 4px;
+  font-weight: 600;
+}
+
+.info-item p {
+  margin: 0;
+  color: #555;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+/* טופס */
+.contact-form {
+  background: #ffffff;
+  padding: 36px 32px 40px;
+  border-radius: 20px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e0e5eb;
+}
+
+.contact-form h2 {
+  margin: 0 0 24px;
+  font-size: 1.7rem;
+  color: #0d3b66;
+  font-weight: 700;
+}
+
+.success-message {
+  background: linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%);
+  color: #155724;
+  padding: 14px 18px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  border: 1px solid #b1dfbb;
+  font-weight: 600;
+  text-align: center;
+  animation: slideDown 0.4s ease;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #333;
+  font-size: 0.95rem;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 12px 16px;
+  border: 2px solid #dde2e8;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-family: inherit;
+  transition: all 0.25s ease;
+  background: #fafbfc;
+  box-sizing: border-box;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #1e5d91;
+  background: #ffffff;
+  box-shadow: 0 0 0 3px rgba(30, 93, 145, 0.1);
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.submit-button {
+  width: 100%;
+  padding: 14px 24px;
+  background: linear-gradient(135deg, #0d3b66 0%, #1e5d91 100%);
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  font-size: 1.05rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 20px rgba(13, 59, 102, 0.3);
+  letter-spacing: 0.3px;
+}
+
+.submit-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px rgba(13, 59, 102, 0.4);
+}
+
+.submit-button:active {
+  transform: translateY(0);
+}
+
+.form-note {
+  margin: 20px 0 0;
+  padding: 12px 16px;
+  background: #fff9e6;
+  border: 1px solid #ffe9b3;
+  border-radius: 10px;
+  font-size: 0.88rem;
+  color: #856404;
+  line-height: 1.5;
+}
+
+.form-note strong {
+  color: #6b5003;
+}
+
+/* רספונסיביות */
+@media (max-width: 900px) {
+  .contact-content {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    margin-top: -30px;
+  }
+
+  .contact-title {
+    font-size: 2.3rem;
+  }
+
+  .contact-subtitle {
+    font-size: 1.05rem;
+  }
+
+  .contact-info,
+  .contact-form {
+    padding: 28px 24px;
+  }
+}
+
+@media (max-width: 600px) {
+  .contact-hero {
+    padding: 55px 6% 50px;
+  }
+
+  .contact-title {
+    font-size: 2rem;
+  }
+
+  .contact-subtitle {
+    font-size: 1rem;
+  }
+
+  .contact-content {
+    padding: 0 6%;
+  }
+
+  .contact-info,
+  .contact-form {
+    padding: 24px 20px;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    font-size: 0.95rem;
+  }
+
+  .submit-button {
+    font-size: 1rem;
+  }
+}

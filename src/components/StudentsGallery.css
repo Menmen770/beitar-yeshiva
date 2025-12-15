@@ -1,0 +1,103 @@
+/* src/components/StudentsGallery.css */
+
+.students-gallery-section {
+  width: 100%;
+  padding: 80px 0 90px;
+  background: linear-gradient(to bottom, #ffffff 0%, #f8f9fb 100%);
+}
+
+.gallery-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 8%;
+}
+
+/* כותרת */
+.gallery-header {
+  text-align: center;
+  margin-bottom: 55px;
+}
+
+.gallery-title {
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: #0d3b66;
+  margin: 0 0 12px;
+  position: relative;
+  display: inline-block;
+}
+
+.gallery-title::after {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 5px;
+  background: linear-gradient(90deg, #0d3b66, #1e5d91);
+  border-radius: 3px;
+}
+
+.gallery-subtitle {
+  font-size: 1.15rem;
+  color: #666;
+  margin: 0;
+  font-weight: 400;
+}
+
+.masonry-shell {
+  margin-bottom: 50px;
+}
+
+/* רספונסיביות */
+@media (max-width: 1024px) {
+  .gallery-title {
+    font-size: 2.4rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .students-gallery-section {
+    padding: 60px 0 70px;
+  }
+
+  .gallery-container {
+    padding: 0 6%;
+  }
+
+  .gallery-title {
+    font-size: 2rem;
+  }
+
+  .gallery-subtitle {
+    font-size: 1rem;
+  }
+
+  .gallery-cta p {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .students-gallery-section {
+    padding: 50px 0 60px;
+  }
+
+  .gallery-title {
+    font-size: 1.8rem;
+  }
+
+  .gallery-cta {
+    padding: 30px 20px;
+  }
+
+  .gallery-cta p {
+    font-size: 1.1rem;
+  }
+
+  .cta-btn {
+    padding: 12px 28px;
+    font-size: 1rem;
+  }
+}

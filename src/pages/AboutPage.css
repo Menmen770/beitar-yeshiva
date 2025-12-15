@@ -1,0 +1,286 @@
+/* src/pages/AboutPage.css - עיצוב מקצועי לדף אודות והמפה */
+
+.about-page {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0;
+  background: #f9fafb;
+  color: #222;
+  font-family: "Assistant", system-ui, sans-serif;
+}
+
+.about-hero {
+  background: linear-gradient(135deg, #0d3b66 0%, #14507f 60%, #1e5d91 100%);
+  color: #fff;
+  padding: 80px 10% 70px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.about-hero::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+    circle at 70% 30%,
+    rgba(255, 255, 255, 0.15),
+    transparent 70%
+  );
+  pointer-events: none;
+}
+
+.about-title {
+  font-size: 3rem;
+  margin: 0 0 20px;
+  font-weight: 800;
+  letter-spacing: -1px;
+}
+
+.about-subtitle {
+  max-width: 900px;
+  margin: 0 auto;
+  font-size: 1.2rem;
+  line-height: 1.6;
+  font-weight: 300;
+}
+
+.about-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+  padding: 60px 8% 30px;
+}
+
+.about-block {
+  background: #ffffff;
+  padding: 28px 28px 32px;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+  border: 1px solid #e5e9ef;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  position: relative;
+}
+
+.about-block:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.09);
+}
+
+.about-block h2 {
+  margin: 0 0 14px;
+  font-size: 1.5rem;
+  color: #0d3b66;
+}
+
+.about-block p {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.55;
+  color: #444;
+}
+
+/* כתובת ופרטי קשר */
+.address-section {
+  padding: 10px 8% 20px;
+}
+
+.address-box {
+  background: linear-gradient(135deg, #ffffff 0%, #f2f6fa 100%);
+  border: 1px solid #dbe2e9;
+  border-radius: 18px;
+  padding: 32px 40px;
+  max-width: 950px;
+  margin: 0 auto;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+  position: relative;
+}
+
+.address-box h3 {
+  margin: 0 0 18px;
+  font-size: 1.55rem;
+  color: #0d3b66;
+}
+
+.contact-list {
+  list-style: none;
+  margin: 0 0 18px;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 10px 30px;
+  font-size: 0.95rem;
+}
+
+.contact-list li {
+  padding: 4px 0;
+  color: #333;
+}
+
+.map-cta {
+  text-align: center;
+  margin-top: 10px;
+}
+
+/* שומר עטיפת ClickSpark בגודל התוכן בלבד */
+.inline-click {
+  display: inline-block;
+}
+
+.external-map-button {
+  display: inline-block;
+  background: #0d3b66;
+  color: #fff;
+  text-decoration: none;
+  padding: 12px 26px;
+  border-radius: 50px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  font-size: 0.95rem;
+  transition: background 0.25s ease, transform 0.25s ease;
+  box-shadow: 0 4px 14px rgba(13, 59, 102, 0.3);
+}
+
+.external-map-button:hover {
+  background: #1e5d91;
+  transform: translateY(-3px);
+}
+
+.external-map-button:active {
+  transform: translateY(0);
+}
+
+/* מפה */
+.map-section {
+  padding: 50px 8% 90px; /* מרווח מספיק לפני הפוטר */
+  background: #ffffff;
+  position: relative;
+}
+
+.map-title {
+  text-align: center;
+  margin: 0 0 30px;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #0d3b66;
+  position: relative;
+}
+
+.map-title::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 4px;
+  border-radius: 2px;
+  margin: 14px auto 0;
+  background: linear-gradient(90deg, #0d3b66, #1e5d91);
+}
+
+.map-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  aspect-ratio: 16 / 9;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+  background: #e3e9ef;
+  isolation: isolate;
+}
+
+.map-wrapper iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  filter: saturate(1.1) contrast(1.05);
+}
+
+/* מצב טעינה */
+.map-loading {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  background: linear-gradient(135deg, #f0f3f6 0%, #e2e8ee 100%);
+  font-size: 0.95rem;
+  color: #0d3b66;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  z-index: 2;
+}
+
+.spinner {
+  width: 42px;
+  height: 42px;
+  border: 5px solid rgba(13, 59, 102, 0.2);
+  border-top-color: #0d3b66;
+  border-radius: 50%;
+  animation: spin 0.9s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.map-wrapper.loaded .map-loading {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s ease;
+}
+
+/* רספונסיביות */
+@media (max-width: 900px) {
+  .about-title {
+    font-size: 2.4rem;
+  }
+  .about-subtitle {
+    font-size: 1.05rem;
+  }
+  .map-title {
+    font-size: 1.9rem;
+  }
+  .address-box {
+    padding: 28px 30px;
+  }
+}
+
+@media (max-width: 600px) {
+  .about-hero {
+    padding: 60px 7% 55px;
+  }
+  .about-title {
+    font-size: 2rem;
+  }
+  .about-subtitle {
+    font-size: 0.95rem;
+  }
+  .about-content {
+    padding: 45px 7% 20px;
+  }
+  .address-section {
+    padding: 0 7% 10px;
+  }
+  .address-box {
+    padding: 26px 24px;
+  }
+  .map-section {
+    padding: 45px 7% 70px;
+  }
+  .map-title {
+    font-size: 1.7rem;
+  }
+  .map-wrapper {
+    border-radius: 20px;
+  }
+}

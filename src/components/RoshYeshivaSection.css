@@ -1,0 +1,70 @@
+/* src/components/RoshYeshivaSection.css */
+
+.rosh-yeshiva-section {
+  width: 100%;
+  padding: 70px 6% 80px;
+  background: linear-gradient(to bottom, #f8fafc 0%, #eef3f8 100%);
+  display: flex;
+  justify-content: center;
+}
+
+.rosh-video-wrapper {
+  width: 100%;
+  max-width: 1100px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  text-align: center;
+}
+
+.rosh-video-header {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.rosh-title {
+  margin: 0;
+  font-size: 2.4rem;
+  font-weight: 800;
+  color: #0d3b66;
+}
+
+.rosh-subtitle {
+  margin: 0;
+  font-size: 1.1rem;
+  color: #1e5d91;
+  line-height: 1.5;
+}
+
+.rosh-video-frame {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%; /* 16:9 */
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 16px 40px rgba(13, 59, 102, 0.18);
+  background: #0d3b66;
+}
+
+.rosh-video-frame iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+@media (max-width: 768px) {
+  .rosh-yeshiva-section {
+    padding: 50px 5% 60px;
+  }
+
+  .rosh-title {
+    font-size: 2rem;
+  }
+
+  .rosh-subtitle {
+    font-size: 1rem;
+  }
+}

@@ -1,0 +1,135 @@
+/* src/components/Navbar.css */
+
+/* פס הניווט העליון */
+.navbar {
+  background: linear-gradient(
+    135deg,
+    var(--color-neutral-white) 0%,
+    #f8f9fa 100%
+  );
+  width: 100%;
+  direction: rtl;
+  position: -webkit-sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-bottom: 2px solid var(--color-primary-gold);
+  padding: 6px 0;
+  font-family: Arial, sans-serif;
+}
+
+/* עטיפה פנימית להגבלת רוחב וסידור תוכן */
+.navbar-inner {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 0 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+}
+
+/* אזור לוגו */
+.navbar-logo-area {
+  display: flex;
+  align-items: center;
+}
+
+.logo-img {
+  height: 94px;
+  width: auto;
+  display: block;
+}
+
+/* קישורים */
+.navbar-links {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  margin-left: 80px;
+  margin-inline-start: auto;
+  white-space: nowrap;
+}
+
+.nav-link {
+  color: var(--color-neutral-gray-dark);
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  height: 46px;
+  line-height: 1;
+  padding: 0 12px;
+  border-radius: 10px;
+  white-space: nowrap;
+}
+
+.nav-link:hover {
+  color: var(--color-secondary-blue);
+  background-color: var(--color-primary-gold-light);
+  transform: translateY(-1px);
+}
+
+/* כפתור תרומה מודגש */
+.donate-button {
+  background: linear-gradient(
+    135deg,
+    var(--color-primary-gold) 0%,
+    var(--color-primary-gold-dark) 100%
+  );
+  color: var(--color-neutral-white);
+  text-decoration: none;
+  border-radius: 26px;
+  font-size: 1rem;
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(201, 169, 97, 0.3);
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  height: 46px;
+  line-height: 1;
+  padding: 0 26px;
+  white-space: nowrap;
+}
+
+.donate-button:hover {
+  background: linear-gradient(
+    135deg,
+    var(--color-primary-gold-dark) 0%,
+    var(--color-primary-gold) 100%
+  );
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(201, 169, 97, 0.4);
+}
+
+/* רספונסיביות */
+@media (max-width: 900px) {
+  .navbar-inner {
+    padding: 0 24px;
+    gap: 24px;
+  }
+  .navbar-links {
+    gap: 20px;
+  }
+  .logo-img {
+    height: 64px; /* גרסה מוקטנת לסמארטפונים גדולים */
+  }
+}
+@media (max-width: 600px) {
+  .navbar-inner {
+    flex-wrap: wrap;
+    padding: 6px 20px 10px;
+  }
+  .navbar-links {
+    flex-wrap: wrap;
+    gap: 18px;
+    justify-content: center;
+    width: 100%;
+  }
+  .donate-button {
+    order: -1;
+  }
+}

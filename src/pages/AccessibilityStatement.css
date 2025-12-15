@@ -1,0 +1,133 @@
+/* src/pages/AccessibilityStatement.css */
+
+.accessibility-statement-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f8f9fb 0%, #ffffff 50%, #f8f9fb 100%);
+  padding: 40px 20px;
+}
+
+.statement-container {
+  max-width: 900px;
+  margin: 0 auto;
+  background: white;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.statement-container h1 {
+  font-size: 2.5rem;
+  color: #0d3b66;
+  margin: 0 0 30px 0;
+  text-align: center;
+  font-weight: 800;
+}
+
+.statement-section {
+  margin-bottom: 35px;
+  padding-bottom: 25px;
+  border-bottom: 1px solid #e8ecf1;
+}
+
+.statement-section:last-of-type {
+  border-bottom: none;
+}
+
+.statement-section h2 {
+  font-size: 1.6rem;
+  color: #1e5d91;
+  margin: 0 0 15px 0;
+  font-weight: 700;
+}
+
+.statement-section p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #333;
+  margin: 0 0 15px 0;
+}
+
+.statement-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 15px 0;
+}
+
+.statement-section li {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: #444;
+  margin-bottom: 12px;
+  padding-right: 25px;
+  position: relative;
+}
+
+.statement-section li::before {
+  content: "✓";
+  position: absolute;
+  right: 0;
+  color: #28a745;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.statement-section a {
+  color: #1e5d91;
+  text-decoration: underline;
+  transition: color 0.2s;
+}
+
+.statement-section a:hover {
+  color: #0d3b66;
+}
+
+.statement-section a:focus {
+  outline: 3px solid #ffd700;
+  outline-offset: 2px;
+}
+
+.back-link-container {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.back-link {
+  display: inline-block;
+  padding: 12px 30px;
+  background: linear-gradient(135deg, #0d3b66 0%, #1e5d91 100%);
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: all 0.3s;
+}
+
+.back-link:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(13, 59, 102, 0.3);
+}
+
+.back-link:focus {
+  outline: 3px solid #ffd700;
+  outline-offset: 3px;
+}
+
+@media (max-width: 768px) {
+  .statement-container {
+    padding: 25px 20px;
+  }
+
+  .statement-container h1 {
+    font-size: 2rem;
+  }
+
+  .statement-section h2 {
+    font-size: 1.4rem;
+  }
+
+  .statement-section p,
+  .statement-section li {
+    font-size: 1rem;
+  }
+}
